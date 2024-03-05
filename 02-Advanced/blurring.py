@@ -3,16 +3,16 @@ import cv2 as cv
 img = cv.imread('../Resources/Photos/cats.jpg')
 cv.imshow('Cats', img)
 
-# Averaging
-average = cv.blur(img, (3,3))
+# Averaging (cocok untuk mengatasi noise homogen)
+average = cv.blur(img, (7,7))
 cv.imshow('Average Blur', average)
 
-#Gaussian Blur
-gauss = cv.GaussianBlur(img, (3,3), 0)
+#Gaussian Blur (paling halus)
+gauss = cv.GaussianBlur(img, (7,7), 0)
 cv.imshow('Gaussian Blur', gauss)
 
-#Median Blur
-median = cv.medianBlur(img, 3)
+#Median Blur (bagus untuk mengatasi salt & pepper noise)
+median = cv.medianBlur(img, 7)
 cv.imshow('Median Blur', median)
 
 #Bilateral
